@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:mad/screens/splash_screen.dart';
 
 void main() {
-  // Control
-  final button = ElevatedButton(onPressed: () {}, child: Text("Click Me"));
-  final logo = Image.asset("assets/images/logo.png");
-
-  // Layout
-  final center = Center(
-    child: logo,
-  );
-
-  // Screen
-  final screen = Scaffold(
-    body: center,
-  );
+  final splashScreen = SplashScreen();
 
   // root
   final app = MaterialApp(
-    home: screen,
+    theme: ThemeData(primaryColor: Colors.red, useMaterial3: false),
+    home: splashScreen,
   );
 
   // run
