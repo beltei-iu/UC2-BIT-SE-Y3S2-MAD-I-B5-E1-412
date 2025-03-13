@@ -25,7 +25,9 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     final navBarItems = [
       BottomNavigationBarItem(
-          icon: Icon(Icons.home), label: 'Home', backgroundColor: Colors.amber),
+          icon: Icon(Icons.home),
+          label: 'Home',
+          backgroundColor: Colors.blueAccent),
       BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favourite'),
       BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Cart'),
       BottomNavigationBarItem(
@@ -41,6 +43,8 @@ class _MainScreenState extends State<MainScreen> {
         });
       },
       backgroundColor: Colors.blueAccent,
+      showSelectedLabels: true,
+      showUnselectedLabels: true,
     );
 
     final screen = Scaffold(

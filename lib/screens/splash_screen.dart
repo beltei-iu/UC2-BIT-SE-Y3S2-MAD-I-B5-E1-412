@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mad/routes/app_route.dart';
 import 'package:mad/screens/main_screen.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -10,8 +11,11 @@ class SplashScreen extends StatelessWidget {
       height: 40,
       child: ElevatedButton(
         onPressed: () {
-          final route = MaterialPageRoute(builder: (context) => MainScreen());
-          Navigator.pushReplacement(context, route);
+          // final route = MaterialPageRoute(builder: (context) => MainScreen());
+
+          // Navigator.of(context).pushReplacementNamed(AppRoute.mainScreen);
+
+          AppRoute.key.currentState!.pushReplacementNamed(AppRoute.mainScreen);
         },
         child: Text("Get Start"),
         style: ElevatedButton.styleFrom(

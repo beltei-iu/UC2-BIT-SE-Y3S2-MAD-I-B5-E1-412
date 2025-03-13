@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mad/routes/app_route.dart';
+import 'package:mad/screens/product_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -8,15 +10,19 @@ class HomeScreen extends StatefulWidget {
 class _State extends State<HomeScreen> {
   String urlImage = "assets/images/top.png";
 
+  List<Map<String, String>> data = [
+    {"name": "T-Shirt", "image": "assets/images/image.png", "price": "12"},
+    {"name": "T-Shirt2", "image": "assets/images/image2.png", "price": "12"},
+    {"name": "T-Shirt3", "image": "assets/images/image3.png", "price": "12"}
+  ];
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
   }
 
@@ -38,17 +44,38 @@ class _State extends State<HomeScreen> {
       fit: BoxFit.cover,
     );
 
-    final button = ElevatedButton(
-      child: Text("Change Image"),
-      onPressed: () {
-        setState(() {
-          urlImage = "assets/images/beltei_intake2.png";
-        });
-      },
+    List<Widget> productWidget = data.map((items) {
+      return GestureDetector(
+        child: Card(
+          child: Column(
+            children: [
+              Image.asset(
+                items["image"]!,
+                width: 100,
+              ),
+              Text(items["name"]!)
+            ],
+          ),
+        ),
+        onTap: () {
+          // final route = MaterialPageRoute(
+          //     builder: (context) => ProductDetailScreen(
+          //           image: items["image"]!,
+          //         ));
+          // Navigator.push(context, route);
+
+          AppRoute.key.currentState!
+              .pushNamed(AppRoute.productDetailScreen, arguments: items);
+        },
+      );
+    }).toList();
+
+    final productRow = Row(
+      children: productWidget,
     );
 
     final body = ListView(
-      children: [topImage, button],
+      children: [topImage, productRow],
     );
 
     final screen = Scaffold(
