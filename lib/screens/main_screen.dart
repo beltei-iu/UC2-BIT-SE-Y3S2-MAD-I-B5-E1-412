@@ -3,6 +3,7 @@ import 'package:mad/screens/account_screen.dart';
 import 'package:mad/screens/cart_screen.dart';
 import 'package:mad/screens/favourite_screen.dart';
 import 'package:mad/screens/home_screen.dart';
+import 'package:mad/utils/app_color.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -27,9 +28,15 @@ class _MainScreenState extends State<MainScreen> {
       BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',
-          backgroundColor: Colors.blueAccent),
-      BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favourite'),
-      BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: 'Cart'),
+          backgroundColor: AppColor.appBackgroundColor),
+      BottomNavigationBarItem(
+          icon: Icon(Icons.favorite),
+          label: 'Favorite',
+          backgroundColor: AppColor.appBackgroundColor),
+      BottomNavigationBarItem(
+          icon: Icon(Icons.shopping_cart),
+          label: 'Cart',
+          backgroundColor: AppColor.appBackgroundColor),
       BottomNavigationBarItem(
           icon: Icon(Icons.account_circle), label: 'Account'),
     ];
@@ -42,7 +49,7 @@ class _MainScreenState extends State<MainScreen> {
           _currentIndex = index;
         });
       },
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: AppColor.appBackgroundColor,
       showSelectedLabels: true,
       showUnselectedLabels: true,
     );

@@ -29,7 +29,7 @@ class _State extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: Text("Cloths Shop"),
+      title: Icon(Icons.menu),
       centerTitle: false,
       actions: [
         Padding(

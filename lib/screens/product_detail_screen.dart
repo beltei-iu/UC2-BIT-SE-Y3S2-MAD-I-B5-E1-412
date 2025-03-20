@@ -15,16 +15,24 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final item =
-        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+
+    final _appBar = AppBar(
+      title: Text("${item["name"]}"),
+      elevation: 5,
+    );
+
+    final _body = ListView(
+      children: [
+        Image.asset("${item["image"]}"),
+        Text("${item["price"]}"),
+        Text("${item["description"]}")
+      ],
+    );
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("${item["name"]}"),
-        elevation: 5,
-      ),
-      body: Center(
-        child: Image.asset("${item["image"]}"),
-      ),
+      appBar: _appBar,
+      body: _body,
     );
   }
 }

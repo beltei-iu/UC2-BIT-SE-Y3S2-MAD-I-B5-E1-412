@@ -1,0 +1,37 @@
+[
+    {
+        "name":"T-Shirt",
+        "description":"T-Shirt for women",
+        "price":10,
+        "image":"assets/images/image.png",
+        "category":"T-Shirt"
+    },
+    {
+        "name":"T-Shirt",
+        "description":"T-Shirt for women",
+        "price":10,
+        "image":"assets/images/image.png",
+        "category":"T-Shirt"
+    },
+    {
+        "name":"T-Shirt",
+        "description":"T-Shirt for women",
+        "price":10,
+        "image":"assets/images/image.png",
+        "category":"T-Shirt"
+    },
+    {
+        "name":"T-Shirt",
+        "description":"T-Shirt for women",
+        "price":10,
+        "image":"assets/images/image.png",
+        "category":"T-Shirt"
+    },
+    {
+        "name":"T-Shirt",
+        "description":"T-Shirt for women",
+        "price":10,
+        "image":"assets/images/image.png",
+        "category":"T-Shirt"
+    }
+]
